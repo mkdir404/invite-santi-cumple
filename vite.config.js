@@ -4,7 +4,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,
-    strictPort: true
+    port: 3000,
+    strictPort: false,
+    proxy: {
+      '/api/forms': {
+        target: 'https://docs.google.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/forms/, '/forms')
+      }
+    }
   }
 })

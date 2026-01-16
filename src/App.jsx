@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-posterCream text-slate-900">
       <Hero />
-      <GiftLinks />
+      <GiftLinks />      
       <Footer />
     </div>
   )
